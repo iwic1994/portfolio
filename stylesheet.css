@@ -1,0 +1,615 @@
+
+
+* {
+  box-sizing: border-box;
+  margin:0;
+  padding:0;
+}
+
+body {
+  margin: 0;
+  font-family: Verdana, "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+}
+img {
+  border:0;
+}
+
+a {
+  text-decoration: none;
+}
+
+p{
+  color:rgb(76,80,86);
+  font-weight:500;
+}
+ul{
+  list-style:none;
+}
+.gray{
+  font-weight:bold;
+  color:rgb(239,238,240);
+  font-size:123px;
+}
+.beige{
+  font-weight:bold;
+  color:rgb(245,240,230);
+  font-size:123px;
+}
+.container {
+  max-width:1170px;
+  width: 100%;
+  padding: 0 15px;
+  margin: 0 auto;
+
+}
+.clear{
+  clear: right;
+  clear: left;
+}
+
+/*------------header-----------*/
+header {
+  height: 65px;
+  width: 100%;
+  background-color: rgb(255,255,255,0.9);
+  position :fixed;
+  top: 0;
+  z-index: 20;
+  border-bottom:1px solid rgb(204,204,204,1);
+}
+.header-logo{
+  margin-top:15px;
+  float:left;
+  width:200px;
+}
+.header-text{
+  color:rgb(133,150,149);
+  float:left;
+  margin:20px 20px;
+  font-size:10px;
+}
+.header-list {
+  float: right;
+}
+.header-list a {
+  line-height: 65px;
+  padding: 0 25px;
+  color:rgba(76,80,86,0.7);
+  display: block;
+  float: left;
+}
+
+.header-list a:hover {
+  color:rgba(100,100,100,1);
+}
+/*----------nav------------*/
+nav.globalMenuSp {
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    background: #fff;
+    color:rgb(76,80,86);
+    text-align: center;
+    transform: translateY(-100%);
+    transition: all 0.6s;
+    width: 100%;
+}
+ 
+nav.globalMenuSp ul {
+    background: rgb(245,240,230);
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+}
+ 
+nav.globalMenuSp ul li {
+    font-size: 1.1em;
+    list-style-type: none;
+    padding: 0;
+    width: 100%;
+    border-bottom: 1px dotted #333;
+}
+ 
+/* 最後はラインを描かない */
+nav.globalMenuSp ul li:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
+}
+ 
+nav.globalMenuSp ul li a {
+    display: block;
+    color:rgb(76,80,86);
+    padding: 1em 0;
+}
+ 
+/* このクラスを、jQueryで付与・削除する */
+nav.globalMenuSp.active {
+    transform: translateY(0%);
+}
+
+.navToggle {
+    display: none;
+    position: fixed;    /* bodyに対しての絶対位置指定 */
+    right: 13px;
+    top: 8px;
+    width: 42px;
+    height: 51px;
+    cursor: pointer;
+    z-index: 3;
+    text-align: center;
+}
+.navToggle span {
+    display: block;
+    position: absolute;    /* .navToggleに対して */
+    width: 30px;
+    border-bottom: solid 3px rgb(133,150,149);
+    -webkit-transition: .35s ease-in-out;
+    -moz-transition: .35s ease-in-out;
+    transition: .35s ease-in-out;
+    left: 6px;
+}
+.navToggle span:nth-child(1) {
+    top: 9px;
+}
+.navToggle span:nth-child(2) {
+    top: 18px;
+}
+ 
+.navToggle span:nth-child(3) {
+    top: 27px;
+}
+ 
+.navToggle span:nth-child(4) {
+    border: none;
+    color: rgb(133,150,149);
+    font-size: 9px;
+    font-weight: bold;
+    top: 34px;
+}
+/*---tapしたあと---*/
+/* 最初のspanをマイナス45度に */
+.navToggle.active span:nth-child(1) {
+    top: 18px;
+    left: 6px;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+ 
+/* 2番目と3番目のspanを45度に */
+.navToggle.active span:nth-child(2),
+.navToggle.active span:nth-child(3) {
+    top: 18px;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+/*---------top-wrapper----------*/
+
+.top-wrapper{
+  padding:25px 0;
+  text-align:center;
+}
+
+.logo-top{
+  display:block;
+  margin:300px auto;
+  width:500px;
+}
+.text-top{
+  text-align:center;
+  padding-bottom:25px;
+}
+.text-top-br{
+  display:none;
+}
+.btn-wrapper{
+  text-align:center;
+}
+.btn {
+  display: inline-block;
+  opacity: 0.8;
+  position:relative;
+  margin-top:15px;
+}
+
+.btn-title{
+  position:absolute;
+  top:15px;
+  left:40px;
+  font-size:20px;
+}
+.btn-text{
+  font-size:10px;
+  position:absolute;
+  top:45px;
+  left:40px;
+  font-weight:600;
+}
+.btn-contact{
+  background-color:rgb(204,204,204);
+  color:white;
+  border:1px solid rgb(204,204,204);
+  border-radius:6px;
+  width:400px;
+  height:65px;
+  text-align:center;
+  padding:15px 0;
+  font-size:20px;
+  font-weight:bold;
+  margin-top:15px;
+  cursor:pointer;
+}
+
+.btn:hover {
+  opacity: 1;
+}
+
+/*------showroom-wrapper--------*/
+.showroom-wrapper{
+  background-color:rgb(245,240,230);
+  padding:25px 0;
+}
+.white-box{
+  background-color:white;
+  width:960px;
+  margin:0 auto;
+  position:relative;
+}
+.showroom-right{
+  float:right;
+}
+.showroom-wrapper h2{
+  text-align:right;
+  margin-bottom:25px;
+  position:relative;
+  z-index:10;
+}
+.showroom-right p{
+  padding-left:190px;
+}
+.adress{
+  padding-top:25px;
+}
+.showroom-left{
+  float:left;
+}
+.showroom-left p{
+  font-size:13px;
+  text-align:center;
+  padding-bottom:20px;
+  padding-left:20px;
+  font-weight:600;
+}
+.pic-showroom{
+  width:420px;
+  height:315px;
+  position:absolute;
+  top:-12px;
+  left:-12px;
+}
+/*----directore-wrapper----*/
+.director-wrapper{
+  padding:25px 0;
+}
+.director-introduction{
+  width:960px;
+  margin:0 auto;
+  padding:0 30px;
+}
+.director-text{
+  float:left;
+  width:70%;
+}
+.director-image{
+  float:left;
+  width:30%;
+}
+.director-wrapper h2{
+  padding-right:70px;
+  text-align:right;
+}
+.director-wrapper h3{
+  color:rgb(76,80,86);
+  font-size:32px;
+  padding-right:70px;
+  text-align:right;
+}
+.director-wrapper p{
+  text-align:left;
+}
+.pic-director{
+  width:270px;
+  height:360px;
+}
+/*----faq-wrapper------*/
+.faq-wrapper{
+  padding:25px 0;
+}
+
+.faq-wrapper h2{
+  text-align:center;
+}
+.faq-wrapper h3{
+  text-align:center;
+  color:rgb(76,80,86);
+}
+.faq{
+  width:960px;
+  margin:0 auto;
+  text-align:center;
+}
+.question{
+  font-size:;
+}
+.more{
+  display:block;
+  padding:10px;
+  text-align:center;
+  color:rgb(76,80,86);
+  margin:0 auto;
+  border:2px solid rgb(76,80,86);
+  width:100px;
+  opacity:0.8;
+  margin-top:10px;
+}
+/*contact-wrapper-----------*/
+.contact-wrapper{
+  padding:25px 0;
+  text-align:center;
+}
+.contact-wrapper h3{
+  color:rgb(76,80,86);
+}
+.btn-box{
+  border:1px solid rgb(133,150,149);
+  border-radius:10px;
+  width:50%;
+  margin:0 auto;
+  padding:25px;
+}
+footer img {
+  width: 80px;
+}
+
+footer p {
+  color: #b3aeb5;
+  font-size: 12px;
+}
+
+footer {
+  text-align:center;
+  padding-top: 30px;
+  padding-bottom: 20px;
+}
+
+/*------------individual-faq----------*/
+
+.i-faq-wrapper h2{
+  color:rgb(76,80,86);
+}
+.i-faq-wrapper {
+  text-align: center;
+  color:rgb(76,80,86);
+  padding-top:130px;
+}
+
+#faq-list {
+  width: 600px;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+}
+
+.faq-list-item {
+  margin:10px 0 25px;
+  border-bottom:1px solid #ccc;
+  position:relative;
+  cursor:pointer;
+  text-align: left;
+}
+
+.faq-list-item h4 {
+  font-size: 16px;
+  color:rgb(133,150,149);
+}
+
+.faq-list-item span {
+  position:absolute;
+  top:0;
+  right:5px;
+  color:#ccc;
+  font-size:13px;
+}
+
+.answer {
+  font-size: 14px;
+  padding: 5px 0px;
+  margin-bottom: 15px;
+  display:none;
+}
+
+
+
+/*-------individual-about-wrapper---------*/
+
+.about-wrapper{
+  padding-top:130px;
+  text-align:center;
+}
+.about-wrapper .beige{
+  text-align:center;
+}
+.about-wrapper h1{
+  color:rgb(133,150,149);
+  text-align:center;
+  padding-bottom:25px;
+}
+.about-top{
+  padding:50px 0;
+  display:inline-block;
+  margin:0 auto;
+}
+.about-top-text{
+  float:left;
+  padding-right:30px;
+  display:inline-block;
+}
+.about-top-image{
+  display:inline-block;
+}
+.about-top-text h3{
+  font-weight:normal;
+  color:rgb(76,80,86);
+  font-size:23px;
+  padding-bottom:35px;
+  display:inline-block;
+}
+.about-top-text p{
+  font-size:15px;
+  display:inline-block;
+  text-align:left;
+}
+.about-top img{
+  width:250px;
+}
+.about-slide{
+  border:3px solid rgb(245,240,230);
+  border-radius:10px;
+  width:700px;
+  height:425px;
+  margin:20px auto 0;
+  padding:30px;
+}
+.slide-menu{
+  border-bottom:1px solid rgb(245,240,230);
+  margin:0 auto;
+  text-align:center;
+}
+.menu-btn:hover{
+  color:black;
+}
+.menu-btn{
+  cursor:pointer;
+  padding:10px;
+  display:inline-block;
+  color:rgb(133,150,149);
+  font-weight:bold;
+  font-size:18px;
+}
+.slide{
+  display:none;
+  padding:25px;
+  margin:0 auto;
+}
+.slide img{
+  float:left;
+  width:250px;
+}
+.slide p{
+  float:left;
+  width:300px;
+  padding-left:30px;
+  text-align:left;
+}
+.selected{
+  color:black;
+}
+.active{
+  display:block;
+}
+.about-kodawari{
+   background-color:rgb(245,240,230);
+   padding:25px 0;
+   margin-top:25px;
+}
+.about-kodawari h3{
+  padding-top:25px;
+}
+.kodawari{
+  background-color:white;
+  width:900px;
+  height:250px;
+  margin:50px auto;
+  padding:20px;
+  position:relative;
+}
+.kodawari h4{
+  font-size:18px;
+  color:rgb(76,80,86);
+  padding:20px;
+}
+.kodawari img{
+  width:200px;
+}
+.kodawari-text-left{
+  float:left;
+  width:600px;
+  text-align:left;
+}
+.kodawari-text-right{
+  float:right;
+  width:600px;
+  text-align:left;
+}
+.kodawari-image-right,.kodawari-image-left{
+  float:left;
+}
+.kodawari-image-right{
+  position:absolute;
+  top:25px;
+  right:25px;
+}
+.kodawari-image-left{
+  position:absolute;
+  top:25px;
+  left:25px;
+}
+
+/*-------individual-contact-wrapper---------*/
+.i-contact-wrapper{
+  text-align:center;
+  padding:130px 0;
+}
+.i-contact-wrapper .heading{
+  padding-bottom:50px;
+}
+.i-contact-wrapper h2{
+  color:rgb(133,150,149);
+}
+.i-contact-wrapper p{
+  padding-bottom:20px;
+}
+.telephone-box{
+  border:1px solid rgb(133,150,149);
+  border-radius:10px;
+  width:420px;
+  margin:0 auto;
+  padding-top:20px;
+}
+.telephone-box p{
+  color:rgb(76,80,86);
+}
+.telephone-box span{
+  font-size:27px;
+  padding-left:10px;
+}
+/*---individual-contents-wrapper----*/
+.i-contents-wrapper .beige{
+  padding-top:130px;
+  text-align:center;
+}
+.i-contents-wrapper h1{
+  text-align:center;
+  color:rgb(133,150,149);
+}
+/*---individual-works-wrapper---*/
+.i-works-wrapper .beige{
+  padding-top:130px;
+  text-align:center;
+}
+.i-works-wrapper h1{
+  text-align:center;
+  color:rgb(133,150,149);
+}
